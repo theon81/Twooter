@@ -1,0 +1,5 @@
+.feed-active {
+    background-color: var(--main);
+    color: var(--light);
+    border-left: 5px solid var(--dark);
+}

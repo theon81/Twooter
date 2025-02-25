@@ -11,12 +11,13 @@
   --grey: #F1F0F6;
   --dark-grey: #8D8D8D;
   --light: #fff;
-  --dark: #000;
   --green: #81D43A;
   --light-green: #E3FFCB;
-  --purple: #a841ae;
   --light-purple: #D0E4FF;
   --red: #FC3B56;
+  --main: #E17564;
+  --highlight: #BE3144;
+  --dark: #872341;
 }
 
 html {
@@ -28,7 +29,7 @@ body {
 }
 
 button {
-  background-color: var(--purple);
+  background-color: var(--main);
   font-size: 14px;
   color: var(--light);
   padding: 9px;
@@ -82,7 +83,7 @@ li {
   align-items: center;
   height: 64px;
   font-weight: 700;
-  color: var(--purple);
+  color: var(--light);
   position: sticky;
   top: 0;
   left: 0;
@@ -131,8 +132,15 @@ li {
   white-space: nowrap;
 }
 
+#sidebar .side-menu>a.active,
+#sidebar .side-menu>a.active:hover {
+  color: var(--light);
+}
+
 #sidebar .side-menu>li>a:hover {
-  background: var(--grey);
+  background: var(--highlight);
+  color: var(--light);
+  border-left: 5px solid var(--dark);
 }
 
 #sidebar .side-menu>li>a.active .icon-right {
@@ -141,7 +149,7 @@ li {
 
 #sidebar .side-menu>li>a.active,
 #sidebar .side-menu>li>a.active:hover {
-  background: var(--purple);
+  background: var(--main);
   color: var(--light);
 }
 
@@ -175,54 +183,7 @@ li {
 }
 
 #sidebar .side-dropdown a:hover {
-  color: var(--purple);
-}
-
-#sidebar .ads {
-  width: 100%;
-  padding: 20px;
-}
-
-#sidebar.hide .ads {
-  display: none;
-}
-
-#sidebar.hide:hover .ads {
-  display: block;
-}
-
-#sidebar .ads .wrapper {
-  background: var(--grey);
-  padding: 20px;
-  border-radius: 10px;
-}
-
-#sidebar .btn-upgrade {
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 0;
-  color: var(--light);
-  background: var(--purple);
-  transition: all .3s ease;
-  border-radius: 5px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-#sidebar .btn-upgrade:hover {
-  background: var(--purple);
-}
-
-#sidebar .ads .wrapper p {
-  font-size: 12px;
-  color: var(--dark-grey);
-  text-align: center;
-}
-
-#sidebar .ads .wrapper p span {
-  font-weight: 700;
+  color: var(--main);
 }
 
 /* CONTENT */
@@ -279,7 +240,7 @@ nav .form-group input {
 }
 
 nav .form-group input:focus {
-  box-shadow: 0 0 0 1px var(--purple), 0 0 0 4px var(--light-purple);
+  box-shadow: 0 0 0 1px var(--main), 0 0 0 4px var(--highlight);
 }
 
 nav .form-group .icon {
@@ -296,7 +257,7 @@ nav .nav-link {
 
 nav .nav-link .icon {
   font-size: 18px;
-  color: var(--dark);
+  color: var(--main);
 }
 
 nav .nav-link .badge {
@@ -307,7 +268,7 @@ nav .nav-link .badge {
   height: 20px;
   border-radius: 50%;
   border: 2px solid var(--light);
-  background: var(--red);
+  background: var(--highlight);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -392,7 +353,7 @@ main .breadcrumbs li a {
 }
 
 main .breadcrumbs li a {
-  color: var(--purple);
+  color: var(--main);
 }
 
 main .breadcrumbs li a.active,
@@ -457,7 +418,7 @@ main .card .progress::before {
   top: 0;
   left: 0;
   height: 100%;
-  background: var(--purple);
+  background: var(--main);
   width: var(--value);
 }
 
@@ -570,7 +531,7 @@ main .chat-box .day span {
   padding: 6px 12px;
   border-radius: 20px;
   background: var(--light-purple);
-  color: var(--purple);
+  color: var(--main);
   font-size: 12px;
   font-weight: 600;
 }
@@ -610,7 +571,7 @@ main .chat-box .chat p {
 
 main .chat-box .msg:not(.me) .chat p {
   border-radius: 0 5px 5px 5px;
-  background: var(--purple);
+  background: var(--main);
   color: var(--light);
 }
 
@@ -649,12 +610,12 @@ main .form-group input {
 }
 
 main .form-group input:focus {
-  box-shadow: 0 0 0 1px var(--purple), 0 0 0 4px var(--light-purple);
+  box-shadow: 0 0 0 1px var(--main), 0 0 0 4px var(--light-purple);
 }
 
 main .btn-send {
   padding: 0 16px;
-  background: var(--purple);
+  background: var(--main);
   border-radius: 5px;
   color: var(--light);
   cursor: pointer;
@@ -663,7 +624,7 @@ main .btn-send {
 }
 
 main .btn-send:hover {
-  background: var(--purple);
+  background: var(--main);
 }
 
 @media screen and (max-width: 768px) {
@@ -756,7 +717,7 @@ thead th {
   position: sticky;
   top: 0;
   left: 0;
-  background-color: var(--purple);
+  background-color: var(--main);
   text-transform: capitalize;
 }
 
@@ -808,7 +769,7 @@ thead th {
 }
 
 .upload-btn {
-  background-color: var(--purple);
+  background-color: var(--main);
   color: white;
   border: none;
   padding: 10px 20px;

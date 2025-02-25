@@ -1,13 +1,13 @@
 <template>
-  <h1>Sửa đổi sản phẩm</h1>
+  <h1>Edit Product</h1>
   <form @submit.prevent="updateProduct" class="form-container">
     <div class="input">
-      <input type="text" v-model="name" id="name" required placeholder="TÊN SẢN PHẨM">
-      <input type="number" v-model="price" id="price" required placeholder="GIÁ SẢN PHẨM">
+      <input type="text" v-model="name" id="name" required placeholder="Product Name">
+      <input type="number" v-model="price" id="price" required placeholder="Product Price">
     </div>
-    <button type="submit">LƯU</button>
+    <button type="submit">Save</button>
     <router-link to="/products">
-      <button type="button">TRỞ VỀ</button>
+      <button type="button">Cancel</button>
     </router-link>
   </form>
 </template>
@@ -35,8 +35,8 @@ export default {
         this.name = product.name || '';
         this.price = product.price || '';
       } catch (error) {
-        console.error('Không thể tải sản phẩm:', error);
-        alert('Không thể tải sản phẩm. Vui lòng thử lại sau.');
+        console.error('Cannot load item:', error);
+        alert('Cannot load item. Please try again later');
       }
     },
     async updateProduct() {
@@ -47,11 +47,11 @@ export default {
 
       try {
         await updateProduct(this.productId, productData);
-        alert('Cập nhật sản phẩm thành công!');
+        alert('Updated product!');
         this.$router.push('/products');
       } catch (error) {
-        console.error('Không thể cập nhật sản phẩm:', error);
-        alert('Cập nhật sản phẩm thất bại. Vui lòng thử lại.');
+        console.error('Cannot update product:', error);
+        alert('Cannot update product. Please try again later');
       }
     },
   },

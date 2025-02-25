@@ -4,8 +4,8 @@
     <div class="bottom"></div>
     <div class="center">
       <h2>Sign in!</h2>
-      <input type="text" placeholder="username" v-model="username" @keydown.enter="login" />
-      <input type="password" placeholder="password" v-model="password" @keydown.enter="login" />
+      <input type="text" placeholder="Username" v-model="username" @keydown.enter="login" />
+      <input type="password" placeholder="Password" v-model="password" @keydown.enter="login" />
       <button @click="login" style="width: 150px;">Sign in</button>
     </div>
   </div>

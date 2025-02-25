@@ -1,42 +1,64 @@
 <template>
   <h1>Add a product</h1>
-  <form @submit.prevent="createAccount" class="form-container">
+  <form @submit.prevent="createProduct" class="form-container">
     <div class="input">
-      <input type="text" v-model="username" id="username" required placeholder="USERNAME">
-      <input type="password" v-model="password" id="password" required placeholder="PASSWORD">
+      <input type="text" v-model="name" id="name" required placeholder="Product Name">
+      <input type="number" v-model="price" id="price" required placeholder="Product Price">
     </div>
-    <button type="submit">LƯU</button>
+    <button type="submit">Add</button>
     <router-link to="/products">
-      <button type="button">TRỞ VỀ</button>
+      <button type="button">Cancel</button>
     </router-link>
   </form>
 </template>
 
 <script>
-import { createUser } from '../services/userService.js';
+import { createProduct } from '../services/productService.js';
 
 export default {
-  name: 'AddUser',
+  name: 'AddProduct',
   data() {
     return {
-      username: '',
-      password: '',
+      name: '',
+      price: '',
     };
   },
   methods: {
-    async createAccount() {
-      const userData = {
-        username: this.username,
-        password: this.password,
+    async createProduct() {
+      const productData = {
+        name: this.name,
+        price: this.price,
       };
 
       try {
-        await createUser(userData);
-        this.$router.push('/users');
+        await createProduct(productData);
+        this.$router.push('/products');
       } catch (error) {
-        console.error('Không tạo được tài khoản:', error);
+        console.error('Cannot create product:', error);
       }
     },
   },
 };
 </script>
+
+<style scoped>
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+</style>

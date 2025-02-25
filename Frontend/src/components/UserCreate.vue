@@ -1,13 +1,13 @@
 <template>
-    <h1>Thêm mới nhân viên</h1>
+    <h1>Add User</h1>
     <form @submit.prevent="createAccount" class="form-container">
         <div class="input">
-            <input type="text" v-model="username" id="username" required placeholder="USERNAME">
-            <input type="password" v-model="password" id="password" required placeholder="PASSWORD">
+            <input type="text" v-model="username" id="username" required placeholder="Username">
+            <input type="password" v-model="password" id="password" required placeholder="Password">
         </div>
-        <button type="submit">LƯU</button>
+        <button type="submit">Add</button>
         <router-link to="/users">
-            <button type="button">TRỞ VỀ</button>
+            <button type="button">Cancel</button>
         </router-link>
     </form>
 </template>
@@ -34,7 +34,7 @@ export default {
                 await createUser(userData);
                 this.$router.push('/users');
             } catch (error) {
-                console.error('Không tạo được tài khoản:', error);
+                console.error('Cannot create user:', error);
             }
         },
     },

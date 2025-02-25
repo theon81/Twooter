@@ -2,9 +2,6 @@
     <main class="table" id="blogs_table">
         <section class="table__header">
             <h1>Post management</h1>
-            <router-link to="/blogs/add">
-                <button>Add post</button>
-            </router-link>
             <div class="input-group">
                 <input type="search" placeholder="Search for posts...">
                 <img src="../assets/img/search.png" alt="">
@@ -32,9 +29,9 @@
                         <td>{{ blog.author }}</td>
                         <td>
                             <router-link :to="`/blogs/edit/${blog.id}`">
-                                <button>EDIT</button>
+                                <button>Edit</button>
                             </router-link>
-                            <button @click="confirmDelete(blog.id)">REMOVE</button>
+                            <button @click="confirmDelete(blog.id)">Remove</button>
                         </td>
                     </tr>
                 </tbody>

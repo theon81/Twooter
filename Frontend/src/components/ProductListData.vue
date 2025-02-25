@@ -1,12 +1,12 @@
 <template>
   <main class="table" id="products_table">
     <section class="table__header">
-      <h1>QUẢN LÝ SẢN PHẨM</h1>
+      <h1>Product Management</h1>
       <router-link to="/products/add">
-        <button>THÊM MỚI</button>
+        <button>Add product</button>
       </router-link>
       <div class="input-group">
-        <input type="search" placeholder="Tìm kiếm...">
+        <input type="search" placeholder="Search products...">
         <img src="../assets/img/search.png" alt="">
       </div>
     </section>
@@ -15,14 +15,14 @@
         <thead>
           <tr>
             <th> ID </th>
-            <th> TÊN </th>
-            <th> GIÁ </th>
-            <th> THAO TÁC</th>
+            <th> PRODUCT NAME </th>
+            <th> Price </th>
+            <th> ACTION </th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="loading">
-            <td colspan="6">Đang tải...</td>
+            <td colspan="6">Loading...</td>
           </tr>
           <tr v-for="user in products" :key="user.id" v-else>
             <td>{{ user.id }}</td>
@@ -30,9 +30,9 @@
             <td>{{ user.price }}</td>
             <td>
               <router-link :to="`/products/edit/${user.id}`">
-                <button>SỬA</button>
+                <button>Edit</button>
               </router-link>
-              <button @click="confirmDelete(user.id)">XÓA</button>
+              <button @click="confirmDelete(user.id)">Remove</button>
             </td>
           </tr>
         </tbody>
@@ -61,9 +61,9 @@ export default {
       try {
         this.products = await fetchProducts();
       } catch (error) {
-        console.error('Không thể tải sản phẩm:', error);
+        console.error('Cannot load item:', error);
 
-        alert('Không thể tải dữ liệu sản phẩm.');
+        alert('Cannot load item data.');
       } finally {
         this.loading = false;
       }
@@ -73,13 +73,13 @@ export default {
         await deleteProductService(id);
         this.loadProducts();
       } catch (error) {
-        console.error('Không thể xóa sản phẩm:', error);
+        console.error('Cannot remove item:', error);
 
-        alert('Không thể xóa dữ liệu sản phẩm.');
+        alert('Cannot remove item data.');
       }
     },
     confirmDelete(id) {
-      if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này ?')) {
+      if (confirm('Are you sure you want to remove this item?')) {
         this.removeProduct(id);
       }
     },

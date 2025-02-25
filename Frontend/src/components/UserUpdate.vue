@@ -1,14 +1,14 @@
 <template>
-    <h1>Sửa đổi nhân viên</h1>
+    <h1>Edit User</h1>
     <form @submit.prevent="updateAccount" class="form-container">
         <div class="input">
-            <input type="text" v-model="username" id="username" required placeholder="TÀI KHOẢN">
-            <input type="password" v-model="password" id="password" required placeholder="MẬT KHẨU">
-            <input type="text" v-model="role" id="role" required placeholder="VAI TRÒ">
+            <input type="text" v-model="username" id="username" required placeholder="Username">
+            <input type="password" v-model="password" id="password" required placeholder="Password">
+            <input type="text" v-model="role" id="role" required placeholder="Role">
         </div>
-        <button type="submit">LƯU</button>
+        <button type="submit">Save</button>
         <router-link to="/users">
-            <button type="button">TRỞ VỀ</button>
+            <button type="button">Cancel</button>
         </router-link>
     </form>
 </template>
@@ -38,7 +38,8 @@ export default {
                 this.password = user.password || '';
                 this.role = user.role.toString() || '';
             } catch (error) {
-                console.error('Failed to load user:', error);
+                console.error('Cannot load item:', error);
+                alert('Cannot load item. Please try again later');
             }
         },
         async updateAccount() {
@@ -52,7 +53,8 @@ export default {
                 await updateUser(this.userId, userData);
                 this.$router.push('/users');
             } catch (error) {
-                console.error('Failed to update account:', error);
+                console.error('Cannot update user:', error);
+                alert('Cannot update user. Please try again later');
             }
         },
     },

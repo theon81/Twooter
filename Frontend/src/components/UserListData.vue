@@ -1,9 +1,9 @@
 <template>
   <main class="table" id="customers_table">
     <section class="table__header">
-      <h1>QUẢN LÝ NHÂN VIÊN</h1>
+      <h1>User Management</h1>
       <router-link to="/users/add">
-        <button>THÊM MỚI</button>
+        <button>Add User</button>
       </router-link>
       <div class="input-group">
         <input type="search" placeholder="Tìm kiếm...">
@@ -15,15 +15,15 @@
         <thead>
           <tr>
             <th> ID </th>
-            <th> TÀI KHOẢN </th>
-            <th> MẬT KHẨU </th>
-            <th> CHỨC VỤ </th>
-            <th> THAO TÁC</th>
+            <th> USERNAME </th>
+            <th> PASSWORD </th>
+            <th> ROLE </th>
+            <th> ACTION </th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="loading">
-            <td colspan="6">Đang tải...</td>
+            <td colspan="6">Loading...</td>
           </tr>
           <tr v-for="user in users" :key="user.id" v-else>
             <td>{{ user.id }}</td>
@@ -32,9 +32,9 @@
             <td>{{ user.role === 0 ? 'ADMIN' : 'USER' }}</td>
             <td>
               <router-link :to="`/users/edit/${user.id}`">
-                <button>SỬA</button>
+                <button> Edit </button>
               </router-link>
-              <button @click="confirmDelete(user.id)">XÓA</button>
+              <button @click="confirmDelete(user.id)"> Remove </button>
             </td>
           </tr>
         </tbody>
@@ -62,8 +62,8 @@ export default {
       try {
         this.users = await fetchUsers();
       } catch (error) {
-        console.error('Không thể tải dữ liệu nhân viên:', error);
-        alert('Không thể tải dữ liệu nhân viên.');
+        console.error('Cannot load item:', error);
+        alert('Cannot load item data.');
       } finally {
         this.loading = false;
       }
@@ -73,12 +73,12 @@ export default {
         await deleteUserService(id);
         this.loadUsers();
       } catch (error) {
-        console.error('Không thể xóa dữ liệu nhân viên:', error);
-        alert('Không thể xóa dữ liệu nhân viên.');
+        console.error('Cannot remove item:', error);
+        alert('Cannot remove item data.');
       }
     },
     confirmDelete(id) {
-      if (confirm('Bạn có chắc chắn muốn xóa người dùng này?')) {
+      if (confirm('Are you sure you want to remove this user?')) {
         this.removeUser(id);
       }
     },
