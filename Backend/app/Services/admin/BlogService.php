@@ -5,15 +5,15 @@ use App\Http\Requests\BlogRequest;
 use App\Models\Blogs;
 
 class BlogService {
-    // Get all blog services
+    //get all blog services
     public function getAllBlogs() {
         return Blogs::all();
     }
-    // Get blog by ID service
+    //get blog by ID service
     public function getBlogId($id) {
         return Blogs::find($id);
     }
-    // Create blog service
+    //create blog service
     public function createBlog(BlogRequest $request) {
         $newBlog = Blogs::create([
             'title' => $request->title,
@@ -22,7 +22,7 @@ class BlogService {
         ]);
         return $newBlog;
     }
-    // Update blog service
+    //update blog service
     public function updateBlog($id, BlogRequest $request) {
         $blog = Blogs::findOrFail($id);
         $blog->update([
@@ -32,7 +32,7 @@ class BlogService {
         ]);
         return $blog;
     }
-    // Delete blog service 
+    //delete blog service 
     public function deleteBlog($id) {
         $blog = Blogs::findOrFail($id);
         $blog->delete();

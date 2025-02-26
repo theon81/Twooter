@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class LoginService {
-    // Login service 
+    //login service 
     public function loginAuth(LoginRequest $request) {
-        // Validate the request
+        //validate the request
         $account = Accounts::where('username', $request->input('username'))->first();
         if (!$account) {
             return ['success' => false, 'error' => 'Username is incorrect.'];
@@ -18,7 +18,7 @@ class LoginService {
         if (!Hash::check($request->input('password'), $account->password)) {
             return ['success' => false, 'error' => 'Password is incorrect.'];
         }
-        // create role after authentication
+        //create role after authentication
         Auth::login($account);
         /** @var \App\Models\Accounts $user **/
         $user = Auth::user();
