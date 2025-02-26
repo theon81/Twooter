@@ -1,7 +1,5 @@
 export default function effect() {
-    // Logic của bạn ở đây
-
-    // SIDEBAR DROPDOWN
+    //sidebar dropdown
     const allDropdown = document.querySelectorAll('#sidebar .side-dropdown');
     const sidebar = document.getElementById('sidebar');
 
@@ -23,7 +21,7 @@ export default function effect() {
             item.classList.toggle('show');
         })
     })
-    // SIDEBAR COLLAPSE
+    //sidebar collapse
     const toggleSidebar = document.querySelector('nav .toggle-sidebar');
     const allSideDivider = document.querySelectorAll('#sidebar .divider');
 
@@ -85,7 +83,7 @@ export default function effect() {
             })
         }
     })
-    // PROFILE DROPDOWN
+    //profile dropdown
     const profile = document.querySelector('nav .profile');
     const imgProfile = profile.querySelector('img');
     const dropdownProfile = profile.querySelector('.profile-link');
