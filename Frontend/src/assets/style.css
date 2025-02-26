@@ -877,24 +877,24 @@ thead th {
 .top {
   &:before {
     transform: rotate(60deg);
-    background: #296ea7;
+    background: var(--highlight);
   }
 
   &:after {
     transform: rotate(120deg);
-    background: #efe6de;
+    background: var(--main);
   }
 }
 
 .bottom {
   &:before {
     transform: rotate(-60deg);
-    background: #4039b6;
+    background: var(--main);
   }
 
   &:after {
     transform: rotate(-120deg);
-    background: #a334bf;
+    background: var(--dark);
   }
 }
 
