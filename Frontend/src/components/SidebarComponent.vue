@@ -1,6 +1,6 @@
 <template>
     <section id="sidebar">
-        <router-link to="/dashboard" class="brand"><img src="../assets/img/logo.png" alt="" style="width: 45px;"></router-link>
+        <router-link to="/dashboard" class="brand"><img src="../assets/img/twooter.png" alt="" style="width: 45px;"></router-link>
         <ul class="side-menu">
             <li><router-link to="/dashboard" class="feed" active-class="feed-active"><i class='bx bxs-dashboard icon'></i> Feed </router-link></li>
             <li class="divider" data-text="Moderation"> Moderation </li>
