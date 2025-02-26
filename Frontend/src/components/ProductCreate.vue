@@ -13,7 +13,32 @@
 </template>
 
 <script>
-import { createProduct } from '../services/productService.js';
+// import { createProduct } from '../services/productService.js';
+
+// export default {
+//   name: 'AddProduct',
+//   data() {
+//     return {
+//       name: '',
+//       price: '',
+//     };
+//   },
+//   methods: {
+//     async createProduct() {
+//       const productData = {
+//         name: this.name,
+//         price: this.price,
+//       };
+
+//       try {
+//         await createProduct(productData);
+//         this.$router.push('/products');
+//       } catch (error) {
+//         console.error('Cannot create product:', error);
+//       }
+//     },
+//   },
+// };
 
 export default {
   name: 'AddProduct',
@@ -29,9 +54,18 @@ export default {
         name: this.name,
         price: this.price,
       };
-
       try {
-        await createProduct(productData);
+        const response = await fetch('/CreateProduct', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(productData),
+        });
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
         this.$router.push('/products');
       } catch (error) {
         console.error('Cannot create product:', error);

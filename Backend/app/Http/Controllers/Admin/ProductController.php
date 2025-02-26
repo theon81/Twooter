@@ -29,7 +29,7 @@ class ProductController extends Controller
 
         return response()->json($product);
     }
-    //  delete product by id controller
+    //  create product by id controller
     public function createProduct(ProductRequest $request)
     {
         $newProduct = $this->productService->createProduct($request);
