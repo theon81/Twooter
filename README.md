@@ -10,6 +10,65 @@ Special thanks to my professor, Ms. Le Thu for her guidance throughout the cours
 
 ## Project Structure
 
+```bash
+Twooter/
+├── Backend/  # Laravel Backend
+│   ├── app/  # Application Logic
+│   │   ├── Http/  # HTTP Layer
+│   │   │   ├── Controllers/  # Controllers
+│   │   │   ├── Middleware/  # Middleware
+│   │   │   └── Requests/  # Form Requests
+│   │   ├── Models/  # Database Models
+│   │   ├── Providers/  # Service Providers
+│   │   └── Services/  # Business Logic Services
+│   ├── bootstrap/  # Bootstrap Files
+│   │   ├── app.php  # Application Bootstrap
+│   │   └── cache/  # Cached Files
+│   ├── config/  # Configuration Files
+│   │   ├── app.php  # Application Config
+│   │   ├── auth.php  # Authentication Config
+│   │   ├── cache.php  # Cache Config
+│   │   ├── cors.php  # CORS Config
+│   │   ├── database.php  # Database Config
+│   │   └── queue.php  # Queue Config
+│   ├── database/  # Database Related
+│   │   ├── factories/  # Model Factories
+│   │   ├── migrations/  # Database Migrations
+│   │   └── seeders/  # Database Seeders
+│   ├── routes/  # Application Routes
+│   │   ├── api.php  # API Routes
+│   │   ├── console.php  # Console Routes
+│   │   └── web.php  # Web Routes
+│   ├── storage/  # Storage
+│   │   ├── app/  # Application Files
+│   │   ├── framework/  # Framework Files
+│   │   └── logs/  # Log Files
+│   ├── tests/  # Automated Tests
+│   │   ├── Feature/  # Feature Tests
+│   │   └── Unit/  # Unit Tests
+│   ├── vendor/  # Composer Dependencies
+│   ├── .editorconfig  # Editor Config
+│   ├── .env  # Environment Variables
+│   ├── .env.example  # Example Env File
+│   ├── .gitattributes  # Git Attributes
+│   ├── .gitignore  # Git Ignore
+│   ├── artisan  # Laravel CLI
+│   ├── composer.json  # Composer Config
+│   ├── composer.lock  # Composer Lock
+│   ├── package.json  # NPM Config
+│   ├── phpunit.xml  # PHPUnit Config
+│   ├── README.md  # Project Documentation
+│   └── vite.config.js  # Vite Config
+└── Frontend/  # Frontend (Vite-based)
+    ├── src/  # Source Code
+    ├── public/  # Public Assets
+    ├── .gitignore  # Git Ignore
+    ├── .vscode/  # VSCode Config
+    ├── index.html  # Entry HTML
+    ├── package.json  # NPM Config
+    └── vite.config.js  # Vite Config
+```
+
 ## Backend
 
 The backend is built with Laravel and provides the API and business logic for the application.
