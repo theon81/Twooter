@@ -6,7 +6,7 @@ This project is a web application that consists of a backend built with the Lara
 
 ## Special Thanks
 
-Special thanks to my professor, Ms. Le Thu for her guidance throughout the course of this class. Also, thanks to Board Infinity from Coursera for providing me with the precious resource and knowledge about the Laravel framework.
+Special thanks to my professor, Ms. Le Thu for her guidance throughout the course of this class. Also, thanks to Board Infinity from Coursera for providing me with the precious resources and knowledge about the Laravel framework.
 
 ## Project Structure
 
@@ -145,4 +145,30 @@ npm install
 npm run dev
 ```
 
-## License
+## Deployment (Local)
+
+After running both of the backend & frontend servers (on separate terminals), open your browser and navigate to `https://localhost:5173/`.
+
+## Preview
+
+Here are some of the screenshots taken from my application's interface.
+
+### Login
+
+<img src="./Frontend/src/assets/img/preview/Signin.gif" width="800"/>
+
+### Dashboard
+
+<img src="./Frontend/src/assets/img/preview/mainfeed.png" width="800"/>
+
+### Posting
+
+<img src="./Frontend/src/assets/img/preview/addpost.png" width="800"/>
+<img src="./Frontend/src/assets/img/preview/addpostcomplete.png" width="800"/>
+<img src="./Frontend/src/assets/img/preview/postmanage.png" width="800"/>
+<img src="./Frontend/src/assets/img/preview/postmanageedit.png" width="800"/>
+
+### Users
+
+<img src="./Frontend/src/assets/img/preview/usermanage.png" width="800"/>
+<img src="./Frontend/src/assets/img/preview/usermanageadd.png" width="800"/>
