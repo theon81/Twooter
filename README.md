@@ -8,6 +8,24 @@ This project is a web application that consists of a backend built with the Lara
 
 Special thanks to my professor, Ms. Le Thu for her guidance throughout the course of this class. Also, thanks to Board Infinity from Coursera for providing me with the precious resources and knowledge about the Laravel framework.
 
+## Flowcharts
+
+### Login Function
+<img src="./Frontend/src/assets/img/Flowcharts/LoginFlowchart.png" width="400"/>
+
+### Create Function
+<img src="./Frontend/src/assets/img/Flowcharts/CreateFlowchart.png" width="400"/>
+
+### Read Function
+<img src="./Frontend/src/assets/img/Flowcharts/ReadFlowchart.png" width="170"/>
+
+### Update Function
+<img src="./Frontend/src/assets/img/Flowcharts/UpdateFlowchart.png" width="400"/>
+
+### Delete Function
+<img src="./Frontend/src/assets/img/Flowcharts/DeleteFlowchart.png" width="170"/>
+
+
 ## Project Structure
 
 ```bash
